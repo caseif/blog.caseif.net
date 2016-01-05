@@ -1,12 +1,21 @@
 <?php
-include('./templates/header.php');
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
+
+if ($userid != 1){
+    header("HTTP/1.1 403 Forbidden");
+    include($_SERVER['DOCUMENT_ROOT']."/error/403.php");
+    die();
+}
+
 $id = $_GET['id'];
-if (!isset($id))
-	header("Refresh: 0; url='./'");
+if (!isset($id)) {
+	header("Location: /");
+}
 ?>
 <div id="feed">
 <?php
-if ($userid == 1){
+
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 $link = getDbConnection();
 $query = $link->query("SELECT * FROM posts WHERE id = $id");
 if ($query->num_rows > 0){
@@ -24,7 +33,8 @@ if ($query->num_rows > 0){
 	$day = $time['mday'];
 	$preview = 1000;
 	$dots = false;
-	$content = bbcode($content);
+    $parser = new Parsedown();
+	$content = $parser->text(syntaxPreprocessor($content));
 	while (substr($content, $preview, 1) != " " && strlen($content) > $preview)
 		$preview += 1;
 	if (strlen($content) > $preview){
@@ -60,18 +70,15 @@ if ($query->num_rows > 0){
 		//echo "<script>window.location.replace('./')</script>";
 	}
 	if ($_POST['no']){
-		header("Refresh: 0; url='./post.php?id=".$id."'");
+		header("Refresh: 0; url='/post.php?id=".$id."'");
 	}
 	echo $form;
 }
 else
-	echo "Oh noes! No post by this ID exists!";
+	echo "No post by this ID exists!";
 $link->close();
-}
-else
-	header("Refresh: 0; url='./'");
 ?>
 </div>
 <?php
-include('./templates/footer.php');
+require_once('./templates/footer.php');
 ?>

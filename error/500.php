@@ -1,8 +1,8 @@
 <?php
-header("HTTP/1.0 500 Internal Server Error");
-require("../templates/preheader.php");
+header("HTTP/1.1 500 Internal Server Error");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
 $pagetitle = "500 Internal Server Error";
-require("../templates/header.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 ?>
 <div id="feed">
 <header class='heading'>Something's gone terribly wrong...</header>
@@ -10,5 +10,5 @@ A grave mistake has been made on our server. We cannot say whether we are respon
 <div class="massive">500</div>
 </div>
 <?php
-require("../templates/footer.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/footer.php");
 ?>

@@ -1,5 +1,13 @@
 <?php
-include("templates/header.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
+
+if ($userid != 1) {
+    header("HTTP/1.1 403 Forbidden");
+    include($_SERVER['DOCUMENT_ROOT']."/error/403.php");
+    die();
+}
+
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 ?>
 <div id="feed">
 <h3><b>Create a Post</b></h3>
@@ -40,7 +48,7 @@ if ($_POST['submit']){
 	$sta->execute();
 	$id = $link->query("SELECT * FROM posts WHERE title='".$title."'")->fetch_array()['id'];
 	$bitly = bitly("/post.php?id=".$id);
-	header("Refresh: 0; url='post.php?id=".$id);
+	header("Location: /post.php?id=".$id);
 }
 echo $form;
 ?>

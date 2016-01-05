@@ -7,7 +7,7 @@ require($_SERVER['DOCUMENT_ROOT']."/templates/header.php";
 $r = $_GET['r'];
 if ($userid && $username){
 	echo "You are already logged in. Redirecting to home page...";
-	header("Refresh: 1; url='$r'");
+	header("Location: $r");
 }
 else
 if ($_POST['regbtn']){

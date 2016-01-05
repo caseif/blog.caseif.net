@@ -1,11 +1,22 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
-require($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
+
+if ($userid != 1) {
+    header("HTTP/1.1 403 Forbidden");
+    include($_SERVER['DOCUMENT_ROOT']."/error/403.php");
+    die();
+}
+
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
 ?>
 <div id="feed">
 <h3>Edit</h3>
 <?php
 $id = $_GET['id'];
+if (!isset($id)) {
+    header("Location: /");
+}
 $link = getDbConnection();
 $row = $link->query("SELECT * FROM posts WHERE id='".$id."'")->fetch_array();
 $title = $row['title'];
@@ -54,5 +65,5 @@ echo $form;
 ?>
 </div>
 <?php
-include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
 ?>

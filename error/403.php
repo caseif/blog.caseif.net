@@ -1,8 +1,8 @@
 <?php
-header("HTTP/1.0 404 Forbidden");
-require("./templates/preheader.php");
+header("HTTP/1.1 403 Forbidden");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
 $pagetitle = "403 Forbidden";
-require("../templates/header.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 ?>
 <div id="feed">
 <header class='heading'>None shall pass</header>
@@ -10,5 +10,5 @@ Greetings, stranger. We won't waste time asking how you found this place, but we
 <div class="massive">403</div>
 </div>
 <?php
-require("../templates/footer.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/footer.php");
 ?>

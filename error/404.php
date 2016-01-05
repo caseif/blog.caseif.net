@@ -1,8 +1,8 @@
 <?php
-header("HTTP/1.0 404 Not Found");
-require("../templates/preheader.php");
+header("HTTP/1.1 404 Not Found");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/preheader.php");
 $pagetitle = "404 Not Found";
-require("../templates/header.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 ?>
 <div id="feed">
 <header class='heading'>There's nothing here...</header>
@@ -10,5 +10,5 @@ We've searched far and wide, but there is simply no file which resides at this p
 <div class="massive">404</div>
 </div>
 <?php
-require("../templates/footer.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/templates/footer.php");
 ?>
