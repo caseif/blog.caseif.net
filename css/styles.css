@@ -40,10 +40,6 @@ code {
 	resize: none;
 }
 
-#feed article > footer .full {
-	padding-top: 20px;
-}
-
 #container {
 	margin-top: 15px;
 }
@@ -258,8 +254,7 @@ article > header > a {
 }
 
 .sig {
-	padding-top: 15px;
-	/*padding-bottom: 8px;*/
+	padding-bottom: 6px;
 	color: #7777FF;
 }
 
