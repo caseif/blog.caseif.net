@@ -221,7 +221,7 @@ function randStr($length = 32) {
 <div id="container" class="container">
 <div id="navbar">
 	<span id="title">
-		<a href="/">caseif.net</a>
+		<a href="/">caseif's blog</a>
 	</span>
 	<span id="tagline"></span>
 	<div id="nav-buttons">
