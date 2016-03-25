@@ -76,9 +76,9 @@ function randStr($length = 32) {
 	<script type="text/javascript" src="/js/snow.js"></script>
 	<script src="/lib/prism/core.js"></script>
 	<script src='https://www.google.com/recaptcha/api.js'></script>
-	
+
 	<script>
-	
+
 	function delay(time) {
 		var d1 = new Date();
 		var d2 = new Date();
@@ -86,7 +86,7 @@ function randStr($length = 32) {
 			d2 = new Date();
 		}
 	}
-	
+
 	var nextPage = 2;
 	function loadComments(page){
 		$(document).ready(function(){
@@ -97,7 +97,7 @@ function randStr($length = 32) {
 		$('.loadmore').html($('.loadmore').html().replace('loadComments([0-9])', 'loadComments(' + nextPage + ')'));
 		nextPage += 1;
 	}
-	
+
 	function like(id){
 		if (window.XMLHttpRequest){
 			xmlhttp=new XMLHttpRequest();
@@ -114,7 +114,7 @@ function randStr($length = 32) {
 			console.log('Refreshed like count');
 		});
 	}
-	
+
 	function unlike(id){
 		if (window.XMLHttpRequest){
 			xmlhttp=new XMLHttpRequest();
@@ -131,7 +131,7 @@ function randStr($length = 32) {
 			console.log('Refreshed like count');
 		});
 	}
-	
+
 	function getCookie(c_name){
 		var c_value = document.cookie;
 		var c_start = c_value.indexOf(" " + c_name + "=");
@@ -151,20 +151,20 @@ function randStr($length = 32) {
 		}
 		return c_value;
 	}
-	
+
 	function htmlDecode(input){
 		var e = document.createElement('div');
 		e.innerHTML = input;
 		return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
 	}
-	
+
 	function confirmDeleteComment(id){
 		if (confirm('Are you sure you want to delete this comment?')){
 			$.ajax({
 				url: "util/delete_comment.php",
 				type: "POST",
 				data: {id : id},
-				dataType: "html", 
+				dataType: "html",
 				success: function() {
 					$('#comment_' + id).fadeOut(1000, function(){
 						$('#comment_' + id).remove();
@@ -195,7 +195,7 @@ function randStr($length = 32) {
 		var message = messages[Math.floor(Math.random() * messages.length)];
 		$('#tagline').html(message);
 	}
-		
+
 	$(document).ready(
 		function() {
 			genMessage();
@@ -233,14 +233,14 @@ function randStr($length = 32) {
 		<a class="navbutton" href="/about.php">About</a>
 	</div>
 </div>
-<div id="snowToggle">
+<!--<div id="snowToggle">
 <?php
-if (strpos($_SERVER['HTTP_USER_AGENT'], "Trident") <= -1){
+/*if (strpos($_SERVER['HTTP_USER_AGENT'], "Trident") <= -1){
 	if ($_COOKIE['snow'] == "off")
 		echo "<a href='javascript:startSnow()'>Want snow again? Click here!</a>";
 	else
 		echo "<a href='javascript:stopSnow()'>Snow too slow? Turn it off!</a>";
-}
+}*/
 ?>
-</div>
+</div>-->
 <div id="main-content">

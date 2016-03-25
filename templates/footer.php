@@ -104,7 +104,7 @@
 </div>
 </div>
 </body>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 // some festive snow
 function letItSnow(){
 	snowFall.snow($("#navbar"), {flakeCount: 250, round: true, minSize: 1, maxSize: 3});
@@ -130,7 +130,7 @@ function startSnow(){
 	document.getElementById("snowToggle").innerHTML = "<a href='javascript:stopSnow()'>Snow too slow? Turn it off!</a>";
 	console.log("Let it snow!");
 }
-</script>
+</script>-->
 </html>
 <?php
 ob_end_flush();
