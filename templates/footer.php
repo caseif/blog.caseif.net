@@ -93,7 +93,7 @@
 	<br>
 	<hr class="divider">
 	<br>
-	&#169;2015	Maxim Roncacé
+	&#169;2016	Max Roncace
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="mailto:caseif@caseif.net">Email me!</a>
 	<br>
