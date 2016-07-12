@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 html {
-	/*background-color: #F9F9FF;*/
-	background: url('/images/bg_gradient.png');
+	background-color: #FBFBFB;
+	/*background: url('/images/bg_gradient.png');*/
 	color: black;
 	font-family: "Lato", Calibri, Candara, Arial, sans-serif;
 }
@@ -46,15 +46,15 @@ code {
 
 #navbar {
 	clear: both;
-	position: fixed;
+	position: absolute;
 	left: 0;
-	/*background-color: #222;*/
 	width: 100%;
 	padding-top: 15px;
 	height: 50px;
-	/*padding-left: 15px;*/
+    background: #222;
+	/*background: url('/images/navbar_bg.png') 100% 100%;*/
 	color: #839FE3;
-	background: url('/images/navbar_bg.png') 100% 100%;
+    box-shadow: 0 0 5px 2px #222;
 	z-index: 99999;
 }
 
