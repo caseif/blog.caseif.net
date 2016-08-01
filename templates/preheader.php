@@ -18,7 +18,4 @@ else {
 function startsWithh($haystack, $needle) {
     return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
 }
-
-if (startsWithh($_SERVER['SERVER_NAME'], 'dev.'))
-	$dev = true;
 ?>

@@ -9,7 +9,7 @@ $query = $link->query('SELECT * FROM posts WHERE id = "'.$id.'"');
 $numrows = $query->num_rows;
 if ($numrows == 1){
 	while ($post = $query->fetch_array()){
-		if ($post['visible'] == 0){
+		if ($post['visible'] == 0) {
             header("HTTP/1.1 404 Not Found");
             include($_SERVER['DOCUMENT_ROOT']."/error/404.php");
             die();
@@ -62,10 +62,7 @@ if ($_POST['submitcomment']) {
 echo '<article><header class="heading">'.$title.'</header>';
 echo $content;
 echo '<footer>';
-echo '<div class="sig"><span style="float:right">Written by '.$author.' on '.$month.' '.$day.', '.$year.'</span></div>';
-echo '<div class="fb-like" data-href="http://www.caseif.net/post.php?id=$id" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>';
-echo '&nbsp;&nbsp;&nbsp;&nbsp;';
-echo '<g:plusone></g:plusone>';
+echo '<div class="sig"><span style="float:right">Posted by '.$author.' on '.$month.' '.$day.', '.$year.'</span></div>';
 $link = getDbConnection();
 echo '<br>';
 if ($userid == 1) {

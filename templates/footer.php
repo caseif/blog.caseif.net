@@ -77,16 +77,6 @@
 	<li><a href="http://dev.bukkit.org/profiles/caseif/" target="_blank">Bukkit Plugins</a></li>
 	</ul>
 	</div>
-	<!--<div id="advc">
-		<script class="advert" async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<ins class="adsbygoogle"
-				style="display:inline-block;width:300px;height:250px"
-				data-ad-client="ca-pub-5612433211040407"
-				data-ad-slot="8419980973"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
-	</div>-->
 </div>
 <div id="footer">
 	<footer style="text-align: center">
@@ -94,8 +84,8 @@
 	<hr class="divider">
 	<br>
 	&#169;2016	Max Roncace
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="mailto:caseif@caseif.net">Email me!</a>
+	<span style="display:inline-block;width:28px"></span>
+	<a href="mailto:me@caseif.net">Email me!</a>
 	<br>
 	<br>
 	<span title="(both before and after he redesigned it)">Design inspired by <a href="http://www.dinnerbone.com/">Dinnerbone.com</a></span<

@@ -116,8 +116,7 @@ code {
 }
 
 .navbutton:hover {
-	/*background-color: #000;*/
-	background: url('/images/navbar_btn_bg.png');
+	background-color: #000;
 	-o-transition: 0.25s;
 	-ms-transition: 0.25s;
 	-moz-transition: 0.25s;
