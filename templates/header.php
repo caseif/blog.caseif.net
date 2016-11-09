@@ -70,7 +70,7 @@ function randStr($length = 32) {
 		echo "<meta property='og:description' content='".$description."' />";
 	}
 	?>
-    <title>caseif.net</title>
+    <title>caseif's blog</title>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/snow.js"></script>
@@ -78,7 +78,6 @@ function randStr($length = 32) {
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<script>
-
 	function delay(time) {
 		var d1 = new Date();
 		var d2 = new Date();
@@ -203,7 +202,18 @@ function randStr($length = 32) {
 					+ parseInt($('.navbutton').css('padding-left').replace('px', '')));
 		}
 	);
-
+    
+    function showAllRecent() {
+        $('#all-recent').css('display', 'block');
+        $('#show-hide-recent').html('Hide ' + $('#show-hide-recent').attr('data-addl') + ' more');
+        $('#show-hide-recent').attr('href', 'javascript:hideAllRecent()');
+    }
+    
+    function hideAllRecent() {
+        $('#all-recent').css('display', 'none');
+        $('#show-hide-recent').html('+' + $('#show-hide-recent').attr('data-addl') + ' more...');
+        $('#show-hide-recent').attr('href', 'javascript:showAllRecent()');
+    }
 	</script>
 </head>
 <body>

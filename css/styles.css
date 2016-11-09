@@ -175,57 +175,6 @@ code {
 	padding-bottom: 5px;
 }
 
-.rounded {
-	background: green; /* xmas */
-	border: solid #000;
-	border-width: 1px;
-	border-radius: 15px;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
-	-khtml-border-radius: 15px;
-}
-
-.triangle-isosceles {
-	position: relative;
-	padding: 15px;
-	margin: 1em 0 3em;
-	color: #000;
-	background: #C9C9FF;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	background: -moz-linear-gradient(top, #f9d835, #C9C9FF);
-	background: linear-gradient(top, #f9d835, #C9C9FF);
-	width: 15px;
-	height: 15px;
-}
-
-.triangle-isosceles.left {
-	margin-left: 50px;
-	background: #C9C9FF;
-}
-
-.triangle-isosceles:after {
-	content: "";
-	display: block;
-	position: absolute;
-	bottom: -15px;
-	left: 50px;
-	width:0;
-	border-width: 5px 5px 0;
-	border-style: solid;
-	border-color: #C9C9FF transparent;
-	width: 15px;
-}
-
-.triangle-isosceles.left:after {
-	top:11px; /* controls vertical position */
-	left:-50px; /* value = - border-left-width - border-right-width */
-	bottom:auto;
-	border-width:10px 50px 10px 0;
-	border-color:transparent #C9C9FF;
-}
-
 .massive {
 	margin-top: 125px;
 	font-size: 150pt;
@@ -236,8 +185,12 @@ code {
 .heading {
 	color: #7777FF;
 	font-size: 18pt;
-	padding-top: 18px;
-	padding-bottom: 18px;
+    margin-top: 18px;
+	margin-bottom: 4px;
+}
+
+#sidebar > div {
+    padding-bottom: 12px;
 }
 
 article > header > a {
@@ -316,4 +269,12 @@ code, pre {
 
 .commentcontrol {
 	margin-top: 4px;
+}
+
+#all-recent {
+    display: none;
+}
+
+#recent-list {
+    margin-bottom: 4px;
 }

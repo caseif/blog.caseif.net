@@ -6,15 +6,24 @@
     $link = getDbConnection();
 	$all = $link->query("SELECT * FROM posts WHERE visible = '1'");
 	$total = $all->num_rows;
-	$query = $link->query("SELECT * FROM posts WHERE visible = '1' ORDER BY time DESC LIMIT 0,".$recent);
+	$query = $link->query("SELECT * FROM posts WHERE visible = '1' ORDER BY time DESC");
 	$numrows = $query->num_rows;
 	if ($numrows > 0){
-		echo "<ul>";
-		while ($post = $query->fetch_array())
+		echo "<ul id='recent-list'>";
+        $i = 0;
+		while ($post = $query->fetch_array()) {
+            if ($i++ == $recent) {
+                echo "<span id=\"all-recent\">";
+            }
 			echo "<li><a href='/post.php?id=".$post['id']."'>".$post['title']."</a></li>";
-		if ($total > $recent)
-			echo "<li><a href='/all.php'>+".($total - $recent)." more…</a></li>";
+        }
+		if ($total > $recent) {
+            echo "</span>";
+        }
 		echo "</ul>";
+		if ($total > $recent) {
+			echo "<a id='show-hide-recent' href='javascript:showAllRecent()' data-addl='".($total - $recent)."'>+".($total - $recent)." more…</a>";
+        }
 	}
 	$link->close();
 	?>
