@@ -78,6 +78,8 @@ function randStr($length = 32) {
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<script>
+    var snow = true;
+
 	function delay(time) {
 		var d1 = new Date();
 		var d2 = new Date();
@@ -232,14 +234,5 @@ function randStr($length = 32) {
 		<a class="navbutton" href="/about.php">About</a>
 	</div>
 </div>
-<!--<div id="snowToggle">
-<?php
-/*if (strpos($_SERVER['HTTP_USER_AGENT'], "Trident") <= -1){
-	if ($_COOKIE['snow'] == "off")
-		echo "<a href='javascript:startSnow()'>Want snow again? Click here!</a>";
-	else
-		echo "<a href='javascript:stopSnow()'>Snow too slow? Turn it off!</a>";
-}*/
-?>
-</div>-->
+<div id="snowToggle"></div>
 <div id="main-content">

@@ -103,33 +103,46 @@
 </div>
 </div>
 </body>
-<!--<script type="text/javascript">
-// some festive snow
-function letItSnow(){
-	snowFall.snow($("#navbar"), {flakeCount: 250, round: true, minSize: 1, maxSize: 3});
-}
-
-if (getCookie("snow") != "off" && navigator.userAgent.indexOf("Trident") <= -1)
-	$(document).ready = letItSnow();
-
-function stopSnow(){
-	document.cookie = 'snow=off; expires=' + new Date(2037, 0, 1, 0, 0, 0, 0).toGMTString() + '; path=/';
-	snowFall.snow($("#navbar"), "clear");
-	var flakes = document.getElementsByClassName("snowfall-flakes");
-	if (flakes.length > 0)
-		while (flakes[0])
-			flakes[0].parentNode.removeChild(flakes[0]);
-	document.getElementById("snowToggle").innerHTML = "<a href='javascript:startSnow()'>Want snow again? Click here!</a>";
-	console.log("Well alrighty then Ebenezer");
-}
-
-function startSnow(){
-	document.cookie = "snow=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-	letItSnow();
-	document.getElementById("snowToggle").innerHTML = "<a href='javascript:stopSnow()'>Snow too slow? Turn it off!</a>";
-	console.log("Let it snow!");
-}
-</script>-->
+<!-- BEGIN SNOW -->
+<script type="text/javascript">
+    if (snow) {
+        var enableSnowText = "<a href='javascript:startSnow()'>Want snow again? Click here!</a>";
+        var disableSnowText = "<a href='javascript:stopSnow()'>Snow too slow? Turn it off!</a>";
+        
+        function stopSnow(){
+        	document.cookie = 'snow=off; expires=' + new Date(2037, 0, 1, 0, 0, 0, 0).toGMTString() + '; path=/';
+        	snowFall.snow($("#navbar"), "clear");
+        	var flakes = document.getElementsByClassName("snowfall-flakes");
+        	if (flakes.length > 0)
+        		while (flakes[0])
+        			flakes[0].parentNode.removeChild(flakes[0]);
+        	setSnowToggleText();
+        	console.log("Well alrighty then Ebenezer");
+        }
+        
+        function startSnow(){
+        	document.cookie = "snow=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        	letItSnow();
+        	setSnowToggleText();
+        	console.log("Let it snow!");
+        }
+        
+        function setSnowToggleText() {
+            document.getElementById("snowToggle").innerHTML = getCookie('snow') == 'off' ? enableSnowText : disableSnowText;
+        }
+        
+    // some festive snow
+        function letItSnow(){
+            if (getCookie("snow") != "off" && navigator.userAgent.indexOf("Trident") <= -1) {
+        	    snowFall.snow($("#navbar"), {flakeCount: 250, round: true, minSize: 1, maxSize: 3});
+            }
+            setSnowToggleText();
+        }
+        
+        $(document).ready = letItSnow();
+    }
+</script>
+<!-- END SNOW -->
 </html>
 <?php
 ob_end_flush();
