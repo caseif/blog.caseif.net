@@ -79,11 +79,8 @@
 	<div id="programs">
 	<span class="heading">Links and Stuff</span>
 	<ul>
+	<li><a href="https://caseif.net/">Landing Page</a></li>
 	<li><a href="https://github.com/caseif">GitHub</a></li>
-	<li><a href="http://ci.caseif.net/">Jenkins</a></li>
-	<li><a href="http://ci.caseif.net/job/Pore/" target="_blank">Pore</a></li>
-	<ul><li><a href="https://github.com/LapisBlue/Pore" target="_blank">Source</a></li></ul>
-	<li><a href="http://dev.bukkit.org/profiles/caseif/" target="_blank">Bukkit Plugins</a></li>
 	</ul>
 	</div>
 </div>
