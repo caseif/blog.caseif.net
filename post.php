@@ -35,7 +35,7 @@ if ($numrows == 0) {
     include($_SERVER['DOCUMENT_ROOT']."/error/404.php");
     die();
 }
-$pagetitle = $title.' &mdash; caseif.net';
+$pagetitle = $title.' &mdash; caseif\'s blog';
 require_once($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
 ?>
 <div id="feed">
