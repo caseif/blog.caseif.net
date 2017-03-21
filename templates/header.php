@@ -78,7 +78,7 @@ function randStr($length = 32) {
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<script>
-    var snow = true;
+	var snow = false;
 
 	function delay(time) {
 		var d1 = new Date();
