@@ -21,16 +21,18 @@ else {
 }
 if (isset($_GET['id'])){
 	$id = $_GET['id'];
-			$preview = 200;
-			$dots = false;
-			while (substr($description, $preview, 1) != " " && strlen($description) > $preview)
-				$preview += 1;
-			if (strlen($description) > $preview){
-				$description = substr($description, 0, $preview);
-				$dots = true;
-			}
-			if ($dots)
-				$description = $description.". . .";
+    $preview = 200;
+    $dots = false;
+    while (substr($description, $preview, 1) != " " && strlen($description) > $preview) {
+        $preview += 1;
+    }
+    if (strlen($description) > $preview){
+        $description = substr($description, 0, $preview);
+        $dots = true;
+    }
+    if ($dots) {
+        $description = $description.". . .";
+    }
 }
 
 function ie(){

@@ -11,13 +11,14 @@ $id = $_GET['id'];
 if (!isset($id)) {
 	header("Location: /");
 }
-?>
-<div id="feed">
-<?php
 
 require_once($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
+?>
+<div id="feed">
+<h3><b>Delete Post</b></h3>
+<?php
 $link = getDbConnection();
-$query = $link->query("SELECT * FROM posts WHERE id = $id");
+$query = $link->query("SELECT * FROM posts WHERE id = ".$link->real_escape_string($id)."");
 if ($query->num_rows > 0){
 	echo "Are you sure you want to delete this post?";
 	$post = $query->fetch_array();
@@ -25,7 +26,7 @@ if ($query->num_rows > 0){
 	$content = $post['content'];
 	$category = $post['category'];
 	$authorid = $post['author'];
-	$author = $link->query("SELECT * FROM login WHERE id='$authorid'")->fetch_array()['display'];
+	$author = $link->query("SELECT * FROM login WHERE id='".$link->real_escape_string($authorid)."'")->fetch_array()['display'];
 	$timestamp = $post['time'];
 	$time = getdate($timestamp);
 	$year = $time['year'];
@@ -61,13 +62,13 @@ if ($query->num_rows > 0){
 	</table>
 	</form>";
 	if ($_POST['yes']){
-		$link->query("UPDATE posts SET visible = 0 WHERE id = ".$id);
-		if ($link->query("SELECT * FROM posts WHERE id = ".$id." AND visible = 1")->num_rows == 0)
+		$link->query("UPDATE posts SET visible = 0 WHERE id = ".$link->real_escape_string($id));
+		if ($link->query("SELECT * FROM posts WHERE id = ".$link->real_escape_string($id)." AND visible = 1")->num_rows == 0)
 			echo "<font color='green'>Your post was deleted successfully.</font>";
 		else
 			echo "<font color='red'>An error has occurred; please try again later.</font>";
 		$link->close();
-		//echo "<script>window.location.replace('./')</script>";
+		header("Location: /");
 	}
 	if ($_POST['no']){
 		header("Refresh: 0; url='/post.php?id=".$id."'");

@@ -18,7 +18,7 @@ if (!isset($id)) {
     header("Location: /");
 }
 $link = getDbConnection();
-$row = $link->query("SELECT * FROM posts WHERE id='".$id."'")->fetch_array();
+$row = $link->query("SELECT * FROM posts WHERE id='".$link->real_escape_string($id)."'")->fetch_array();
 $title = $row['title'];
 $content = $row['content'];
 $content = str_replace("<br>", "\n", $content);
@@ -57,7 +57,7 @@ if ($_POST['submit']){
 	$title = str_replace("'", "&#39;", $_POST['title']);
 	//$content = str_replace("\n", "<br>", $_POST['content']);
 	$content = str_replace("'", "&#39;", $_POST['content']);
-	$sta = $link->prepare("UPDATE posts SET title='".$title."',content='".$content."',category='".$_POST['category']."' WHERE id='".$id."'");
+	$sta = $link->prepare("UPDATE posts SET title='".$link->real_escape_string($title)."',content='".$link->real_escape_string($content)."',category='".$link->real_escape_string($_POST['category'])."' WHERE id='".$link->real_escape_string($id)."'");
 	$sta->execute();
 	header('Location: /post.php?id='.$id);
 }

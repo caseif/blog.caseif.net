@@ -6,7 +6,7 @@ include('./templates/header.php');
 	<?php
 	$url = $_GET['url'];
 	if ($userid && $username){
-		$time = (time()-3600);
+		$time = (time() - 3600);
 		setcookie("userid", "", "$time", "/");
 		setcookie("username", "", "$time", "/");
 		session_destroy();

@@ -1,5 +1,5 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT']."/templates/header.php";
+require($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 ?>
 <div id="feed">
 <h3>Register</h3>
@@ -34,10 +34,10 @@ if ($_POST['regbtn']){
 									if ((strlen($getuser) >= 6) && (strlen($getuser) <= 20)){
 										if (strlen($getdisplayname) >= 6 && strlen($getdisplayname) <= 20){
                                             $link = getDbConnection();
-											$query = $link->query("SELECT * FROM login WHERE username='$getuser'");
+											$query = $link->query("SELECT * FROM login WHERE username='".$link->real_escape_string($getuser)."'");
 											$numrows = $query->num_rows;
 											if ($numrows == 0){
-												$query = $link->query("SELECT * FROM login WHERE email='$getemail'");
+												$query = $link->query("SELECT * FROM login WHERE email='".$link->real_escape_string($getemail)."'");
 												$numrows = $query->num_rows;
 												if ($numrows == 0){
 													$url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -58,8 +58,7 @@ if ($_POST['regbtn']){
 													if ($result['success']) {
 														$salt = randStr();
 														$password = sha1($getpass.$salt);
-														$time = time();
-														$sta = $link->prepare("INSERT INTO login (username, display, password, email, active, time, salt) VALUES ('".$getuser."', '".$getdisplayname."', '".$password."', '".$getemail."', '1', '".$time."', '".$salt."')");
+														$sta = $link->prepare("INSERT INTO login (username, display, password, email, active, time, salt) VALUES ('".$link->real_escape_string($getuser)."', '".$link->real_escape_string($getdisplayname)."', '".$password."', '".$link->real_escape_string($getemail)."', '1', '".time()."', '".$salt."')");
 														$sta->execute();
 														$query = $link->query("SELECT * FROM login WHERE username='".$getuser."'");
 														$numrows = $query->num_rows;

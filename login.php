@@ -42,7 +42,7 @@ require($_SERVER['DOCUMENT_ROOT']."/templates/header.php");
 				if ($password){
                     $link = getDbConnection();
 					$link->select_db('blog');
-					$query = $link->query("SELECT * FROM login WHERE username='".$user."'");
+					$query = $link->query("SELECT * FROM login WHERE username='".$link->real_escape_string($user)."'");
 					$numrows = $query->num_rows;
 					if ($numrows == 1){
 						$row = $query->fetch_assoc();
