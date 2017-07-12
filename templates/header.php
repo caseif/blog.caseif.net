@@ -74,7 +74,10 @@ function randStr($length = 32) {
 		echo '<meta property="og:title" content="'.$pagetitle.'">';
 		$description = str_replace("'", "%27", $description);
 		echo "<meta property='og:description' content='".strip_tags($description)."'>";
+	} else {
+		echo "<title>caseif.net</title>";
 	}
+
 	?>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
