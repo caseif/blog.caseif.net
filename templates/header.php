@@ -21,7 +21,7 @@ else {
 }
 if (isset($_GET['id'])){
 	$id = $_GET['id'];
-    $preview = 200;
+    $preview = 180;
     $dots = false;
     while (substr($description, $preview, 1) != " " && strlen($description) > $preview) {
         $preview += 1;
@@ -61,18 +61,21 @@ function randStr($length = 32) {
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 	<link rel="stylesheet" type="text/css" href="/lib/prism/styles.css">
 	<link rel="icon" type="image/png" href="/images/icon.png">
-	<meta property="og:image" content="/images/icon.png" />
-	<meta property="og:type" content="blog" />
-	<meta property="fb:admins" content="100000997811607" />
+
+	<meta property="og:type" content="summary">
+
+	<meta property="fb:admins" content="100000997811607">
+
 	<?php
+	echo "<meta property='og:image' content='https://".$_SERVER['HTTP_HOST']."/images/icon.png'>";
 	if (isset($pagetitle)){
 		echo "<title>".$pagetitle."</title>";
-		echo "<meta property='og:url' content='https://caseif.net/post.php?id=".$id."' />";
-		echo "<meta property='og:title' content='".$pagetitle."' />";
-		echo "<meta property='og:description' content='".$description."' />";
+		echo "<meta property='og:url' content='https://".$_SERVER['HTTP_HOST']."/post.php?id=".$id."'>";
+		echo '<meta property="og:title" content="'.$pagetitle.'">';
+		$description = str_replace("'", "%27", $description);
+		echo "<meta property='og:description' content='".strip_tags($description)."'>";
 	}
 	?>
-    <title>caseif's blog</title>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/snow.js"></script>

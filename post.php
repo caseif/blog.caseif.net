@@ -17,8 +17,9 @@ if ($numrows == 1){
 		$id = $post['id'];
 		$title = $post['title'];
 		$content = $post['content'];
-        $parser = new Parsedown();
+	        $parser = new Parsedown();
 		$content = $parser->text(syntaxPreprocessor($content));
+		$description = $content;
 		$authorid = $post['author'];
 		$category = $post['category'];
 		$timestamp = $post['time'];
