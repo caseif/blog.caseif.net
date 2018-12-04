@@ -51,10 +51,10 @@ code {
 	width: 100%;
 	padding-top: 15px;
 	height: 50px;
-    background: #222;
+	background: #222;
 	/*background: url('/images/navbar_bg.png') 100% 100%;*/
 	color: #839FE3;
-    box-shadow: 0 0 5px 2px #222;
+	box-shadow: 0 0 5px 2px #222;
 	z-index: 99999;
 }
 
@@ -178,12 +178,16 @@ code {
 .heading {
 	color: #7777FF;
 	font-size: 18pt;
-    margin-top: 18px;
+	margin-top: 18px;
 	margin-bottom: 4px;
 }
 
 #sidebar > div {
-    padding-bottom: 12px;
+	padding-bottom: 12px;
+}
+
+article {
+	line-height: 1.4em;
 }
 
 article > header > a {
@@ -265,9 +269,9 @@ code, pre {
 }
 
 #all-recent {
-    display: none;
+	display: none;
 }
 
 #recent-list {
-    margin-bottom: 4px;
+	margin-bottom: 4px;
 }
