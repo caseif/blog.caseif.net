@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 html {
-	background-color: #FBFBFB;
+	background-color: #F5F5F9;
 	/*background: url('/images/bg_gradient.png');*/
-	color: black;
+	color: #181818;
 	font-family: "Lato", Calibri, Candara, Arial, sans-serif;
 }
 
@@ -38,6 +38,11 @@ pre {
 code {
 	word-wrap: normal !important;
 	resize: none;
+	background-color: #FCFCDC;
+}
+
+pre > code {
+	background-color: inherit;
 }
 
 #container {
@@ -60,7 +65,7 @@ code {
 
 #title {
 	font-size: 26pt;
-	padding-top: 1px;
+	padding-top: 4px;
 	padding-left: 50px;
 	white-space: nowrap;
 	float: left;
@@ -93,7 +98,7 @@ code {
  
 #nav-images {
 	position: absolute;
-	top: 8px;
+	top: 10px;
 	margin-top: 12px;
 }
 
