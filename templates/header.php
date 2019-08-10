@@ -75,7 +75,7 @@ function randStr($length = 32) {
 		$description = str_replace("'", "%27", $description);
 		echo "<meta property='og:description' content='".strip_tags($description)."'>";
 	} else {
-		echo "<title>caseif.net</title>";
+		echo "<title>caseif.blog</title>";
 	}
 
 	?>
