@@ -89,7 +89,7 @@
 	<br>
 	<hr class="divider">
 	<br>
-	&#169;2013-2018	Max Roncace
+	&#169;2013-2019	Max Roncace
 	<span style="display:inline-block;width:28px"></span>
 	<a href="mailto:me@caseif.net">Email me!</a>
 	<br>
