@@ -3,17 +3,22 @@ require('./templates/header.php');
 ?>
 <div id="feed">
 	<article>
-	<header class="heading">About Me</header>
-	<p>I'm a student programmer currently attending University of Maryland who sometimes writes/vents on this website. I
-	mainly develop in Java, although I also dabble in other languages (C, C++, Golang) and (obviously) do a bit of web
-	development on the side. On that front, I'm familiar with Javascript, PHP, JSP, and Python. But perhaps what I'm
-	most proud of is my proficiency in none other than TI-BASIC. A big part of the reason I got into programming was in
-	order to make my own <a href="https://dev.bukkit.org/profiles/caseif">Minecraft mods</a> (which I'm now doing as
-	freelance work).
-
-	<p>Leisure activities include eating and aimmlessly wandering campus with friends. I also play video games on the
-	occasion. Usually <i>CoD Zombies</i> or <i>Skyrim</i> (both of which I've put an unhealthy amount of time into), or
-	sometimes just a random indie game.</p>
+		<header class="heading">About Me</header>
+		<p>
+			I'm a freelance software developer currently working with
+			<a href="https://www.rc-gamers.com/">RC-Gamers</a> who sometimes
+			writes/vents on this website. I mainly develop in Java, along with a
+			few other languages (C, C++, Golang), and I do a bit of web
+			development on the side (JS, PHP, JSP). But of course, none of that
+			can compare to my unmatched expertise in TI-BASIC.
+		</p>
+		<p>
+			Leisure activities include hobby software projects, eating, and
+			continuously indulging my coffee addiction. I also play video games
+			from time to time. My favorites are <i>Skyrim</i>, <i>Age of Empires
+			2</i>, and <i>CoD Zombies</i>, but I also enjoy the occasional random
+			indie game.
+		</p>
 	</article>
 </div>
 <?php
